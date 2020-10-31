@@ -1,0 +1,157 @@
+1> built equation
+2> Tested
+	1> Normality of Y, normality of residuls
+	2> Linear relation between X and Y
+	3> Multicollinearity
+	4> Auto correlation
+	5> Heteroscedasticity
+
+######################################################
+linear equation
+	1> Predict Y : model_name.predict()
+	2> Drivers
+	3> Importance
+	4> Explanation of individual pred	
+##################################################################################
+1> Import the data
+2> Clean the data
+	1> Ensure the proper formatting
+	2> Separaing categ and numeric data
+	3> On numeric:
+		1> Outlier trt
+		2> MV trt
+	4> On categ:
+		1> MV trt
+		2> Create Dummy
+	5> Combine numeric and categ data
+3> Sparate data into 2 parts training and testing:
+4> study correlation between Y and every X
+	Select top variables based on abs value of correlation with Y (Only do this if you have
+									<< # of variable)
+5> Check the normality of Y by plotting histogram of Y
+		if not normal take a log
+6> Check for linearity between Y and X
+		get scatter plot for every X with Y (if it dartically not linear assume linearity)
+7> Build the model
+		stats model.api
+			formula.api
+			sklearn
+		ENSURE THAT ALL VARIABLES HAVE P-VALUE<=5%
+8> Check for auto correlation:
+		DW stat should be ~ 2
+9> Bias var tradeoff
+		calculate error (MSE)= training data (10)
+		Calculate error (MSE) = testing data (9-11)
+		
+10> calculate the residuals
+11> plot a histogram of residuals/ plot a Q-Q graph to verify normality
+12> plot actual Y vs residuals
+	if there no funnel shape => no heteroscedasticity
+######################################################################################
+
+Supervised learning ===> Classification ==> Logistic regression
+
+Classification problem ===> Binary classifiction ==> Y=0/1
+
+Problems with linear regression when used in classification
+1> Y is not normal
+2> Y is not bounded between 0 and 1
+3> in classification X and y are not linearly related
+
+######################################################################################
+SOLUTION ?
+Logistic regression:
+		Y for the business : Default/not default , Bought a product /not
+		Y for the logistic regression : prob(business Y=1)
+Solve for Y of logistic:
+		Odds= Prob of an event / prob of that even not happening
+
+	        p=P(business Y=1)
+		Logistic regression
+		log(p/(1-p))=beta0+beta1*X1+...
+########################################################################################
+		ML : Maximum likelihood
+########################################################################################
+		p=P(B Y=1)
+		1-p=p(Y=0)
+		likelihood of any obs : p ^ y * (1-p)^(1-y)
+		likelihood of dataset : product(pi ^ yi * (1-pi)^(1-yi))
+		
+
+		log(p/(1-p))=beta0+beta1*X1+...
+		p/(1-p) = exp(beta0+beta1*X1+...)
+		(p+1-p)/(1-p)= 1+exp(beta0+beta1*X1+...)
+		 1/(1-p) =1+exp(beta0+beta1*X1+...)
+		
+		p=exp(beta0+beta1*X1+...)/ (1+exp(beta0+beta1*X1+...))
+
+		Newton-Raphson
+
+#########################################################################################
+		
+		p=exp(beta0+beta1*X1+...)/ (1+exp(beta0+beta1*X1+...))
+#########################################################################################
+		You have pi for all i
+		Ways to convert prob to 1/0
+		1> if pi>0.5 then pred(Y)=1
+		2> user input cutoff
+		3> if pi> average value of y in dev data (% of y=1 in dev data) then pred Y=1
+		4> Confusion matrix
+######################################################################################33
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+######################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
